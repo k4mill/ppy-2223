@@ -124,7 +124,7 @@ answers.append(input("Jak masz na imię i nazwisko?\n"))
 for key in questions:
     print(f"{questions[key]}\n")
     for letter in questions[key]:
-        print(f"{letter}. {questions[key[letter]]}\n")
+        print(f"{letter}. {questions[key][letter]}\n")
 
     answers.append(input("Podaj literę: "))
 
