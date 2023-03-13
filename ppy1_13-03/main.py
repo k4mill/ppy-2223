@@ -57,8 +57,6 @@ except ValueError:
 
 answers = []
 questions = {
-    "Jak masz na imię i nazwisko?\n": {
-    },
     "Najczęstszym sposobem spędzania wolnego czasu jest dla Ciebie?\n": {
         "A": "oglądanie telewizji/filmów/seriali",
         "B": "czytanie książek/czasopism",
@@ -120,8 +118,15 @@ questions = {
         "J": "inne, jakie?"
     }
 }
-for question in questions:
-    answers.append(input(question))
+
+answers.append(input("Jak masz na imię i nazwisko?\n"))
+
+for key in questions:
+    print(f"{questions[key]}\n")
+    for letter in questions[key]:
+        print(f"{letter}. {questions[key[letter]]}\n")
+
+    answers.append(input("Podaj literę: "))
 
 for index, ans in enumerate(answers):
     print(f"Pytanie {index + 1}: {questions[index]}Odpowiedź: {ans}\n")
